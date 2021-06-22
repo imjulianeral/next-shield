@@ -1,0 +1,29 @@
+{
+  "name": "nextrouter",
+  "version": "1.0.0",
+  "description": "\"The router that every Next.js project needs\"",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "npm publish"
+  },
+  "keywords": [
+    "nextjs",
+    "private",
+    "routes",
+    "router"
+  ],
+  "author": "Jorge Acero",
+  "license": "ISC",
+  "devDependencies": {
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.4"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@imjulianeral"
+  }
+}
