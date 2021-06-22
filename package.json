@@ -1,6 +1,6 @@
 {
   "name": "nextrouter",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "\"The router that every Next.js project needs\"",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,6 +22,10 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjulianeral/nextrouter.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@imjulianeral"
