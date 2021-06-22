@@ -1,5 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.greet = void 0;
-var greet = function () { return 'Hey!'; };
-exports.greet = greet;
+exports.NextShield = void 0;
+var NextShield_1 = require("./NextShield");
+Object.defineProperty(exports, "NextShield", { enumerable: true, get: function () { return NextShield_1.NextShield; } });

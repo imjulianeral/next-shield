@@ -1,1 +1,1 @@
-export const greet = () => 'Hey!'
+export { NextShield } from './NextShield'

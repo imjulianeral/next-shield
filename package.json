@@ -1,6 +1,6 @@
 {
-  "name": "@imjulianeral/nextrouter",
-  "version": "0.0.2",
+  "name": "next-shield",
+  "version": "0.0.1",
   "description": "\"The router that every Next.js project needs\"",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,8 @@
     "deploy": "npm publish"
   },
   "keywords": [
-    "nextjs",
+    "next.js",
+    "next",
     "private",
     "routes",
     "router"
@@ -17,17 +18,16 @@
   "author": "Jorge Acero",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^17.0.11",
     "tsc": "^2.0.3",
     "typescript": "^4.3.4"
   },
+  "dependencies": {
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "engines": {
     "node": ">=14"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/imjulianeral/nextrouter.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/imjulianeral"
   }
 }
