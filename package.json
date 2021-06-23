@@ -1,6 +1,6 @@
 {
   "name": "next-shield",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "\"The router that every Next.js project needs\"",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
