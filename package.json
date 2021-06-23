@@ -29,5 +29,13 @@
   },
   "engines": {
     "node": ">=14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjulianeral/next-shield.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imjulianeral/next-shield/issues"
+  },
+  "homepage": "https://github.com/imjulianeral/next-shield#readme"
 }
