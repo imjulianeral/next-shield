@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router'
+import { NextRouter } from 'next/router'
 import { FC, useEffect } from 'react'
 
 interface Props {
   isAuth: boolean
   isLoading: boolean
+  router: NextRouter
   privateRoutes: string[]
   publicRoutes: string[]
   hybridRoutes?: string[]
@@ -13,14 +14,13 @@ interface Props {
 export const NextShield: FC<Props> = ({
   isAuth,
   isLoading,
+  router,
   privateRoutes,
   publicRoutes,
   hybridRoutes,
   LoadingComponent,
   children,
 }) => {
-  const router = useRouter()
-
   const pathIsProtected = privateRoutes.indexOf(router.pathname) !== -1
   const pathIsPublic = publicRoutes.indexOf(router.pathname) !== -1
   const pathIsHybrid = hybridRoutes?.indexOf(router.pathname) !== -1
