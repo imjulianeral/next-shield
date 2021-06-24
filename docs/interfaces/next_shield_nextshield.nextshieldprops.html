@@ -105,9 +105,40 @@
 					<div class="tsd-signature tsd-kind-icon">Loading<wbr>Component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">FC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:15</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L168">next-shield/NextShield.tsx:168</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Functional Component which is going to appear when <code>isLoading</code> equals to <code>true</code></p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p><code>Loading.tsx</code>:</p>
+								<pre><code class="language-tsx"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">FC</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;react&#039;</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">Loading</span><span style="color: #000000">: </span><span style="color: #267F99">FC</span><span style="color: #000000"> = () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #800000">&lt;p&gt;</span><span style="color: #000000">Loading...</span><span style="color: #800000">&lt;/p&gt;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+								<p><code>_app.tsx</code>:</p>
+								<pre><code class="language-tsx"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Loading</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@components/routes/loading&#039;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">MyApp</span><span style="color: #000000">: </span><span style="color: #267F99">NextPage</span><span style="color: #000000">&lt;</span><span style="color: #267F99">AppProps</span><span style="color: #000000">&gt; = ({ </span><span style="color: #001080">Component</span><span style="color: #000000">, </span><span style="color: #001080">pageProps</span><span style="color: #000000"> }) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">      </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">      </span><span style="color: #FF0000">LoadingComponent</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">Loading</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">      </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">    </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">      </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  )</span>
+<span style="color: #000000">}</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="accessroute" class="tsd-anchor"></a>
@@ -115,9 +146,29 @@
 					<div class="tsd-signature tsd-kind-icon">access<wbr>Route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:11</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L109">next-shield/NextShield.tsx:109</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>🚧 Private route where your user is going to access after login.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-tsx"><span style="color: #000000">...</span>
+<span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000"> </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">   </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">   </span><span style="color: #FF0000">accessRoute</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;/control-panel&quot;</span>
+<span style="color: #000000">   </span><span style="color: #CD3131">...</span>
+<span style="color: #000000"> </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">   </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000"> </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">)</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="hybridroutes" class="tsd-anchor"></a>
@@ -125,9 +176,21 @@
 					<div class="tsd-signature tsd-kind-icon">hybrid<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:14</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L136">next-shield/NextShield.tsx:136</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>🚦🚦🚦 Array of hybrid routes. These are always accessible; doesn&#39;t matter the user state.
+							You are not required to use this prop, it&#39;s only helpful if you wanna track which routes are always accessible.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">hybridRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/support&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/pricing&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/products/[slug]&#039;</span><span style="color: #000000">]</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="isauth" class="tsd-anchor"></a>
@@ -135,13 +198,32 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Auth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:7</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L28">next-shield/NextShield.tsx:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>isAuth boolean property</p>
+							<p>🔑 This value must be provided by the state of your app. Indicates if the user is authenticated or not.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p>Here&#39;s a simple example with firebase auth. But applies the same logic for any auth provider. 😋</p>
+								<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> [</span><span style="color: #0070C1">isAuth</span><span style="color: #000000">, </span><span style="color: #0070C1">setAuth</span><span style="color: #000000">] = </span><span style="color: #795E26">useState</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
+<span style="color: #795E26">useEffect</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">unsubscribe</span><span style="color: #000000"> = </span><span style="color: #795E26">auth</span><span style="color: #000000">().</span><span style="color: #795E26">onAuthStateChanged</span><span style="color: #000000">(</span><span style="color: #001080">user</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">   </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">user</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #795E26">setAuth</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">)</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span>
+<span style="color: #000000">    }</span>
+
+<span style="color: #000000">   </span><span style="color: #795E26">setAuth</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
+<span style="color: #000000">  })</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #795E26">unsubscribe</span><span style="color: #000000">()</span>
+<span style="color: #000000">}, [</span><span style="color: #001080">isAuth</span><span style="color: #000000">])</span>
+</code></pre>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -150,9 +232,36 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Loading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:8</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L54">next-shield/NextShield.tsx:54</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>⏳ This value must be provided by the state of your app. Indicates if the user is already available or not.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p>Here&#39;s a simple example with firebase auth. But applies the same logic for any auth provider. 😋</p>
+								<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> [</span><span style="color: #0070C1">isAuth</span><span style="color: #000000">, </span><span style="color: #0070C1">setAuth</span><span style="color: #000000">] = </span><span style="color: #795E26">useState</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> [</span><span style="color: #0070C1">isLoading</span><span style="color: #000000">, </span><span style="color: #0070C1">setLoading</span><span style="color: #000000">] = </span><span style="color: #795E26">useState</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">)</span>
+<span style="color: #795E26">useEffect</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">unsubscribe</span><span style="color: #000000"> = </span><span style="color: #795E26">auth</span><span style="color: #000000">().</span><span style="color: #795E26">onAuthStateChanged</span><span style="color: #000000">(</span><span style="color: #001080">user</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">user</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #795E26">setAuth</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">)</span>
+<span style="color: #000000">      </span><span style="color: #795E26">setLoading</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span>
+<span style="color: #000000">    }</span>
+
+<span style="color: #000000">    </span><span style="color: #795E26">setAuth</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #795E26">setLoading</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
+<span style="color: #000000">  })</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #795E26">unsubscribe</span><span style="color: #000000">()</span>
+<span style="color: #000000">}, [</span><span style="color: #001080">isAuth</span><span style="color: #000000">])</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="loginroute" class="tsd-anchor"></a>
@@ -160,9 +269,29 @@
 					<div class="tsd-signature tsd-kind-icon">login<wbr>Route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:10</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L91">next-shield/NextShield.tsx:91</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>📋 Public route where is your login form.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-tsx"><span style="color: #000000">...</span>
+<span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000"> </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">   </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">   </span><span style="color: #FF0000">loginRoute</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;/login&quot;</span>
+<span style="color: #000000">   </span><span style="color: #CD3131">...</span>
+<span style="color: #000000"> </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">   </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000"> </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">)</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="privateroutes" class="tsd-anchor"></a>
@@ -170,9 +299,20 @@
 					<div class="tsd-signature tsd-kind-icon">private<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:12</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L118">next-shield/NextShield.tsx:118</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>🚧 🚧 🚧 Array of private routes. These are only accessible when the user is authenticated.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">privateRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/control-panel&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/sales&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/user/[id]&#039;</span><span style="color: #000000">]</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="publicroutes" class="tsd-anchor"></a>
@@ -180,9 +320,20 @@
 					<div class="tsd-signature tsd-kind-icon">public<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:13</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L127">next-shield/NextShield.tsx:127</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>👀 👀 👀 Array of public routes. These are only accessible when the user is NOT authenticated.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">publicRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/login&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/services/[slug]&#039;</span><span style="color: #000000">]</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="router" class="tsd-anchor"></a>
@@ -190,9 +341,30 @@
 					<div class="tsd-signature tsd-kind-icon">router<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NextRouter</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:9</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L73">next-shield/NextShield.tsx:73</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>⇆ Instance of your router.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-tsx"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">router</span><span style="color: #000000"> = </span><span style="color: #795E26">useRouter</span><span style="color: #000000">()</span>
+<span style="color: #000000">...</span>
+<span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000"> </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">   </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">   </span><span style="color: #FF0000">router</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">router</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">   </span><span style="color: #CD3131">...</span>
+<span style="color: #000000"> </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">   </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000"> </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">)</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>

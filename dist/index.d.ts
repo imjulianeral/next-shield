@@ -1,1 +1,1 @@
-export { NextShield } from './NextShield';
+export { NextShield } from './next-shield/NextShield';

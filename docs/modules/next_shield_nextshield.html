@@ -92,16 +92,45 @@
 					<div class="tsd-signature tsd-kind-icon">Next<wbr>Shield<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">FC</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/next_shield_nextshield.nextshieldprops.html" class="tsd-signature-type" data-tsd-kind="Interface">NextShieldProps</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in next-shield/NextShield.tsx:23</li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/4589aeb/src/next-shield/NextShield.tsx#L207">next-shield/NextShield.tsx:207</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>😉 Component designed to protect the routes of your app.</p>
+							<p>😉 Component designed to protect the routes of your app. You must use this component as a wrapper in your <code>_app.tsx</code> file.</p>
 						</div>
 						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-tsx"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Loading</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@components/routes/loading&#039;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">MyApp</span><span style="color: #000000">: </span><span style="color: #267F99">NextPage</span><span style="color: #000000">&lt;</span><span style="color: #267F99">AppProps</span><span style="color: #000000">&gt; = ({ </span><span style="color: #001080">Component</span><span style="color: #000000">, </span><span style="color: #001080">pageProps</span><span style="color: #000000"> }) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">isAuth</span><span style="color: #000000">, </span><span style="color: #0070C1">isLoading</span><span style="color: #000000"> } = </span><span style="color: #795E26">useAuth</span><span style="color: #000000">()</span>
+<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">router</span><span style="color: #000000"> = </span><span style="color: #795E26">useRouter</span><span style="color: #000000">()</span>
+
+<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">privateRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/protected&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">publicRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">hybridRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/products/[slug]&#039;</span><span style="color: #000000">]</span>
+
+<span style="color: #000000"> </span><span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000">   </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">     </span><span style="color: #FF0000">isAuth</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">isAuth</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">     </span><span style="color: #FF0000">isLoading</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">isLoading</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">     </span><span style="color: #FF0000">router</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">router</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">     </span><span style="color: #FF0000">privateRoutes</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">privateRoutes</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">     </span><span style="color: #FF0000">publicRoutes</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">publicRoutes</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">     </span><span style="color: #FF0000">hybridRoutes</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">hybridRoutes</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">     </span><span style="color: #FF0000">LoadingComponent</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">Loading</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">   </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">     </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">   </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  )</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #001080">MyApp</span>
+</code></pre>
+							</dd>
 							<dt>param</dt>
-							<dd><p>The <a href="../interfaces/next_shield_nextshield.nextshieldprops.html">parameters</a> that you must put when using NextShield</p>
+							<dd><p>These are the <a href="../interfaces/next_shield_nextshield.nextshieldprops.html">properties</a> that you must put when using NextShield</p>
 							</dd>
 						</dl>
 					</div>
