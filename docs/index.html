@@ -95,7 +95,7 @@
 				<a href="#isauth" id="isauth" style="color: inherit; text-decoration: none;">
 					<h3>isAuth</h3>
 				</a>
-				<p>🔑 This value must be provided by the state of your app. Indicates if user is authenticated or not.</p>
+				<p>🔑 This value must be provided by the state of your app. Indicates if the user is authenticated or not.</p>
 				<p>Here&#39;s a simple example with firebase auth. But applies the same logic for any auth provider. 😋</p>
 				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> [</span><span style="color: #0070C1">isAuth</span><span style="color: #000000">, </span><span style="color: #0070C1">setAuth</span><span style="color: #000000">] = </span><span style="color: #795E26">useState</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
 <span style="color: #795E26">useEffect</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
@@ -114,7 +114,7 @@
 				<a href="#isloading" id="isloading" style="color: inherit; text-decoration: none;">
 					<h3>isLoading</h3>
 				</a>
-				<p>⏳ This value must be provided by the state of your app. Indicates if user is already available or not.</p>
+				<p>⏳ This value must be provided by the state of your app. Indicates if the user is already available or not.</p>
 				<p>Here&#39;s a simple example with firebase auth. But applies the same logic for any auth provider. 😋</p>
 				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> [</span><span style="color: #0070C1">isAuth</span><span style="color: #000000">, </span><span style="color: #0070C1">setAuth</span><span style="color: #000000">] = </span><span style="color: #795E26">useState</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">)</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> [</span><span style="color: #0070C1">isLoading</span><span style="color: #000000">, </span><span style="color: #0070C1">setLoading</span><span style="color: #000000">] = </span><span style="color: #795E26">useState</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">)</span>
@@ -132,6 +132,97 @@
 
 <span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #795E26">unsubscribe</span><span style="color: #000000">()</span>
 <span style="color: #000000">}, [</span><span style="color: #001080">isAuth</span><span style="color: #000000">])</span>
+</code></pre>
+				<a href="#router" id="router" style="color: inherit; text-decoration: none;">
+					<h3>router</h3>
+				</a>
+				<p>⇆ Instance of your router.</p>
+				<pre><code class="language-tsx"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">router</span><span style="color: #000000"> = </span><span style="color: #795E26">useRouter</span><span style="color: #000000">()</span>
+<span style="color: #000000">...</span>
+<span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">    </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">    </span><span style="color: #FF0000">router</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">router</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">    </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">  </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">)</span>
+</code></pre>
+				<a href="#loginroute" id="loginroute" style="color: inherit; text-decoration: none;">
+					<h3>loginRoute</h3>
+				</a>
+				<p>📋 Login page, must be a public route.</p>
+				<pre><code class="language-tsx"><span style="color: #000000">...</span>
+<span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">    </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">    </span><span style="color: #FF0000">loginRoute</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;/login&quot;</span>
+<span style="color: #000000">    </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">  </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">)</span>
+</code></pre>
+				<a href="#accessroute" id="accessroute" style="color: inherit; text-decoration: none;">
+					<h3>accessRoute</h3>
+				</a>
+				<p>🚧 Private route where your user is going to access after login.</p>
+				<pre><code class="language-tsx"><span style="color: #000000">...</span>
+<span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">    </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">    </span><span style="color: #FF0000">accessRoute</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;/control-panel&quot;</span>
+<span style="color: #000000">    </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">  </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">)</span>
+</code></pre>
+				<a href="#privateroutes" id="privateroutes" style="color: inherit; text-decoration: none;">
+					<h3>privateRoutes</h3>
+				</a>
+				<p>🚧 🚧 🚧 Array of private routes. These are only accessible when the user is authenticated.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">privateRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/control-panel&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/sales&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/user/[id]&#039;</span><span style="color: #000000">]</span>
+</code></pre>
+				<a href="#publicroutes" id="publicroutes" style="color: inherit; text-decoration: none;">
+					<h3>publicRoutes</h3>
+				</a>
+				<p>👀 👀 👀 Array of public routes. These are only accessible when the user is NOT authenticated.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">publicRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/login&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/services/[slug]&#039;</span><span style="color: #000000">]</span>
+</code></pre>
+				<a href="#hybridroutes" id="hybridroutes" style="color: inherit; text-decoration: none;">
+					<h3>hybridRoutes</h3>
+				</a>
+				<p>🚦🚦🚦 Array of hybrid routes. These are always accessible; doesn&#39;t matter the user state.</p>
+				<p>You are not required to use this prop, it&#39;s only helpful if you wanna track which routes are always accessible.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">hybridRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/support&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/pricing&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;/products/[slug]&#039;</span><span style="color: #000000">]</span>
+</code></pre>
+				<a href="#loadingcomponent" id="loadingcomponent" style="color: inherit; text-decoration: none;">
+					<h3>LoadingComponent</h3>
+				</a>
+				<p>Functional Component which is going to appear when <code>isLoading</code> equals to <code>true</code></p>
+				<p><code>Loading.tsx</code>:</p>
+				<pre><code class="language-tsx"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">FC</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;react&#039;</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">Loading</span><span style="color: #000000">: </span><span style="color: #267F99">FC</span><span style="color: #000000"> = () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #800000">&lt;p&gt;</span><span style="color: #000000">Loading...</span><span style="color: #800000">&lt;/p&gt;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p><code>_app.tsx</code>:</p>
+				<pre><code class="language-tsx"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Loading</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@components/routes/loading&#039;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">MyApp</span><span style="color: #000000">: </span><span style="color: #267F99">NextPage</span><span style="color: #000000">&lt;</span><span style="color: #267F99">AppProps</span><span style="color: #000000">&gt; = ({ </span><span style="color: #001080">Component</span><span style="color: #000000">, </span><span style="color: #001080">pageProps</span><span style="color: #000000"> }) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
+<span style="color: #000000">      </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">      </span><span style="color: #FF0000">LoadingComponent</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">Loading</span><span style="color: #0000FF">}</span>
+<span style="color: #000000">      </span><span style="color: #CD3131">...</span>
+<span style="color: #000000">    </span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">      </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  )</span>
+<span style="color: #000000">}</span>
 </code></pre>
 			</div>
 		</div>
