@@ -2,13 +2,15 @@ import type { NextRouter } from 'next/router'
 import type { FC } from 'react'
 import { useEffect } from 'react'
 
+type privateRoutes = string[]
+
 export interface NextShieldProps {
   /**
    * 🔑 This value must be provided by the state of your app. Indicates if the user is authenticated or not.
    *
    * @example
    * Here is a simple example with firebase auth. But applies the same logic for any auth provider. 😋
-   *
+   * @example
    * ```ts
    * const [isAuth, setAuth] = useState(false)
    * useEffect(() => {
@@ -31,7 +33,7 @@ export interface NextShieldProps {
    *
    * @example
    * Here is a simple example with firebase auth. But applies the same logic for any auth provider. 😋
-   *
+   * @example
    * ```ts
    * const [isAuth, setAuth] = useState(false)
    * const [isLoading, setLoading] = useState(true)
@@ -88,7 +90,7 @@ export interface NextShieldProps {
    * )
    * ```
    */
-  loginRoute: string
+  loginRoute: privateRoutes[number]
   /**
    * 🚧 Private route where your user is going to access after login.
    *
@@ -115,7 +117,7 @@ export interface NextShieldProps {
    * const privateRoutes = ['/control-panel', '/sales', '/user/[id]']
    * ```
    */
-  privateRoutes: string[]
+  privateRoutes: privateRoutes
   /**
    * 👀 👀 👀 Array of public routes. These are only accessible when the user is NOT authenticated.
    *
@@ -138,7 +140,6 @@ export interface NextShieldProps {
    * Functional Component which is going to appear when `isLoading` equals to `true` 
    * 
    * @example
-   * `Loading.tsx`:
    * ```tsx
    * import { FC } from 'react'
     
@@ -171,6 +172,9 @@ export interface NextShieldProps {
 /**
  * 😉 Component designed to protect the routes of your app. You must use this component as a wrapper in your `_app.tsx` file.
  * 
+ * @typeParam NextShieldProps - {@link NextShieldProps | see definition here}
+ * @returns NextShield Component
+ * 
  * @example
  * ```tsx
  * import { Loading } from '@components/routes/loading'
@@ -200,8 +204,7 @@ export interface NextShieldProps {
 
  * export default MyApp
  * ```
- * 
- * @param props - These are the {@link NextShieldProps | properties} that you must put when using NextShield
+ * @packageDocumentation
  */
 
 export const NextShield: FC<NextShieldProps> = ({
