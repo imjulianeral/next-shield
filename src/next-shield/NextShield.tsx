@@ -1,10 +1,13 @@
 import type { NextRouter } from 'next/router'
-import type { FC } from 'react'
+import type { ElementType, ReactNode } from 'react'
 import { useEffect } from 'react'
 
-type privateRoutes = string[]
+type Union<T extends any[]> = T extends (infer U)[] ? U : never
 
-export interface NextShieldProps {
+export interface NextShieldProps<
+  PrivateRoutesList extends string[],
+  PublicRoutesList extends string[]
+> {
   /**
    * 🔑 This value must be provided by the state of your app. Indicates if the user is authenticated or not.
    *
@@ -90,7 +93,7 @@ export interface NextShieldProps {
    * )
    * ```
    */
-  loginRoute: privateRoutes[number]
+  loginRoute: Union<PublicRoutesList>
   /**
    * 🚧 Private route where your user is going to access after login.
    *
@@ -108,7 +111,7 @@ export interface NextShieldProps {
    * )
    * ```
    */
-  accessRoute: string
+  accessRoute: Union<PrivateRoutesList>
   /**
    * 🚧 🚧 🚧 Array of private routes. These are only accessible when the user is authenticated.
    *
@@ -117,7 +120,7 @@ export interface NextShieldProps {
    * const privateRoutes = ['/control-panel', '/sales', '/user/[id]']
    * ```
    */
-  privateRoutes: privateRoutes
+  privateRoutes: PrivateRoutesList
   /**
    * 👀 👀 👀 Array of public routes. These are only accessible when the user is NOT authenticated.
    *
@@ -126,7 +129,7 @@ export interface NextShieldProps {
    * const publicRoutes = ['/', '/login', '/services/[slug]']
    * ```
    */
-  publicRoutes: string[]
+  publicRoutes: PublicRoutesList
   /**
    * 🚦🚦🚦 Array of hybrid routes. These are always accessible; doesn't matter the user state.
    * You are not required to use this prop, it's only helpful if you wanna track which routes are always accessible.
@@ -137,22 +140,20 @@ export interface NextShieldProps {
    */
   hybridRoutes?: string[]
   /**
-   * Functional Component which is going to appear when `isLoading` equals to `true` 
-   * 
+   * Functional Component which is going to appear when `isLoading` equals to `true`
+   *
    * @example
    * ```tsx
-   * import { FC } from 'react'
-    
-   * export const Loading: FC = () => {
+   * export function Loading() {
    *   return <p>Loading...</p>
    * }
    * ```
-   * 
+   *
    * `_app.tsx`:
-   * 
+   *
    * ```tsx
    * import { Loading } from '@components/routes/loading'
-   * 
+   *
    * const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
    *   return (
    *     <NextShield
@@ -166,7 +167,7 @@ export interface NextShieldProps {
    * }
    * ```
    */
-  LoadingComponent: FC
+  LoadingComponent: ElementType<unknown>
 }
 
 /**
@@ -207,7 +208,10 @@ export interface NextShieldProps {
  * @packageDocumentation
  */
 
-export const NextShield: FC<NextShieldProps> = ({
+export function NextShield<
+  PrivateRoutesList extends string[],
+  PublicRoutesList extends string[]
+>({
   isAuth,
   isLoading,
   router,
@@ -218,22 +222,22 @@ export const NextShield: FC<NextShieldProps> = ({
   hybridRoutes,
   LoadingComponent,
   children,
-}) => {
-  const pathIsProtected = privateRoutes.indexOf(router.pathname) !== -1
+}: NextShieldProps<PrivateRoutesList, PublicRoutesList> & { children: ReactNode }) {
+  const pathIsPrivate = privateRoutes.indexOf(router.pathname) !== -1
   const pathIsPublic = publicRoutes.indexOf(router.pathname) !== -1
   const pathIsHybrid = hybridRoutes?.indexOf(router.pathname) !== -1
 
   useEffect(() => {
-    if (!isAuth && !isLoading && pathIsProtected) router.replace(loginRoute)
+    if (!isAuth && !isLoading && pathIsPrivate) router.replace(loginRoute)
     if (isAuth && !isLoading && pathIsPublic) router.replace(accessRoute)
-  }, [router, isAuth, isLoading, pathIsProtected, pathIsPublic])
+  }, [router, isAuth, isLoading, pathIsPrivate, pathIsPublic])
 
   if (
-    ((isLoading || !isAuth) && pathIsProtected) ||
+    ((isLoading || !isAuth) && pathIsPrivate) ||
     ((isLoading || isAuth) && pathIsPublic) ||
     (isLoading && pathIsHybrid)
   )
-    return <LoadingComponent />
+    return <>{LoadingComponent}</>
 
   return <>{children}</>
 }

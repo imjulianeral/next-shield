@@ -72,71 +72,51 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/next_shield_nextshield.nextshieldprops.html" class="tsd-kind-icon">Next<wbr>Shield<wbr>Props</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/next_shield_nextshield.nextshieldprops.html" class="tsd-kind-icon">Next<wbr>Shield<wbr>Props</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="next_shield_nextshield.html#nextshield" class="tsd-kind-icon">Next<wbr>Shield</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="next_shield_nextshield.html#nextshield" class="tsd-kind-icon">Next<wbr>Shield</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="nextshield" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> Next<wbr>Shield</h3>
-					<div class="tsd-signature tsd-kind-icon">Next<wbr>Shield<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">FC</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/next_shield_nextshield.nextshieldprops.html" class="tsd-signature-type" data-tsd-kind="Interface">NextShieldProps</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L208">next-shield/NextShield.tsx:208</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>😉 Component designed to protect the routes of your app. You must use this component as a wrapper in your <code>_app.tsx</code> file.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>typeparam</dt>
-							<dd><p><a href="../interfaces/next_shield_nextshield.nextshieldprops.html">see definition here</a></p>
-							</dd>
-							<dt>returns</dt>
-							<dd><p>NextShield Component</p>
-							</dd>
-							<dt>example</dt>
-							<dd><pre><code class="language-tsx"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Loading</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@components/routes/loading&#039;</span>
-
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">MyApp</span><span style="color: #000000">: </span><span style="color: #267F99">NextPage</span><span style="color: #000000">&lt;</span><span style="color: #267F99">AppProps</span><span style="color: #000000">&gt; = ({ </span><span style="color: #001080">Component</span><span style="color: #000000">, </span><span style="color: #001080">pageProps</span><span style="color: #000000"> }) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">isAuth</span><span style="color: #000000">, </span><span style="color: #0070C1">isLoading</span><span style="color: #000000"> } = </span><span style="color: #795E26">useAuth</span><span style="color: #000000">()</span>
-<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">router</span><span style="color: #000000"> = </span><span style="color: #795E26">useRouter</span><span style="color: #000000">()</span>
-
-<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">privateRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/protected&#039;</span><span style="color: #000000">]</span>
-<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">publicRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/&#039;</span><span style="color: #000000">]</span>
-<span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">hybridRoutes</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;/products/[slug]&#039;</span><span style="color: #000000">]</span>
-
-<span style="color: #000000"> </span><span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
-<span style="color: #000000">   </span><span style="color: #800000">&lt;</span><span style="color: #267F99">NextShield</span>
-<span style="color: #000000">     </span><span style="color: #FF0000">isAuth</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">isAuth</span><span style="color: #0000FF">}</span>
-<span style="color: #000000">     </span><span style="color: #FF0000">isLoading</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">isLoading</span><span style="color: #0000FF">}</span>
-<span style="color: #000000">     </span><span style="color: #FF0000">router</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">router</span><span style="color: #0000FF">}</span>
-<span style="color: #000000">     </span><span style="color: #FF0000">privateRoutes</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">privateRoutes</span><span style="color: #0000FF">}</span>
-<span style="color: #000000">     </span><span style="color: #FF0000">publicRoutes</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">publicRoutes</span><span style="color: #0000FF">}</span>
-<span style="color: #000000">     </span><span style="color: #FF0000">hybridRoutes</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">hybridRoutes</span><span style="color: #0000FF">}</span>
-<span style="color: #000000">     </span><span style="color: #FF0000">LoadingComponent</span><span style="color: #000000">=</span><span style="color: #0000FF">{</span><span style="color: #001080">Loading</span><span style="color: #0000FF">}</span>
-<span style="color: #000000">   </span><span style="color: #800000">&gt;</span>
-<span style="color: #000000">     </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Component</span><span style="color: #000000"> </span><span style="color: #0000FF">{</span><span style="color: #000000">...</span><span style="color: #001080">pageProps</span><span style="color: #0000FF">}</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
-<span style="color: #000000">   </span><span style="color: #800000">&lt;/</span><span style="color: #267F99">NextShield</span><span style="color: #800000">&gt;</span>
-<span style="color: #000000">  )</span>
-<span style="color: #000000">}</span>
-
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #001080">MyApp</span>
-</code></pre>
-							</dd>
-						</dl>
-					</div>
+					<h3>Next<wbr>Shield</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">Next<wbr>Shield&lt;PrivateRoutesList, PublicRoutesList&gt;<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><a href="../interfaces/next_shield_nextshield.nextshieldprops.html" class="tsd-signature-type" data-tsd-kind="Interface">NextShieldProps</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PrivateRoutesList</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PublicRoutesList</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>children<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReactNode</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L211">next-shield/NextShield.tsx:211</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>PrivateRoutesList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+								</li>
+								<li>
+									<h4>PublicRoutesList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <a href="../interfaces/next_shield_nextshield.nextshieldprops.html" class="tsd-signature-type" data-tsd-kind="Interface">NextShieldProps</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PrivateRoutesList</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PublicRoutesList</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>children<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReactNode</span><span class="tsd-signature-symbol"> }</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -156,10 +136,10 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/next_shield_nextshield.nextshieldprops.html" class="tsd-kind-icon">Next<wbr>Shield<wbr>Props</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="next_shield_nextshield.html#nextshield" class="tsd-kind-icon">Next<wbr>Shield</a>
 					</li>
 				</ul>
@@ -172,10 +152,10 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 			</ul>
 		</div>
 	</div>

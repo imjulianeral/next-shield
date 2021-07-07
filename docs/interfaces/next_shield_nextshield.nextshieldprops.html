@@ -61,13 +61,24 @@
 					<a href="next_shield_nextshield.nextshieldprops.html">NextShieldProps</a>
 				</li>
 			</ul>
-			<h1>Interface NextShieldProps</h1>
+			<h1>Interface NextShieldProps&lt;PrivateRoutesList, PublicRoutesList&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>PrivateRoutesList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+					</li>
+					<li>
+						<h4>PublicRoutesList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -102,10 +113,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="loadingcomponent" class="tsd-anchor"></a>
 					<h3>Loading<wbr>Component</h3>
-					<div class="tsd-signature tsd-kind-icon">Loading<wbr>Component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">FC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">Loading<wbr>Component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ComponentType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L167">next-shield/NextShield.tsx:167</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L170">next-shield/NextShield.tsx:170</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -114,9 +125,7 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>example</dt>
-							<dd><pre><code class="language-tsx"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">FC</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;react&#039;</span>
-
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">Loading</span><span style="color: #000000">: </span><span style="color: #267F99">FC</span><span style="color: #000000"> = () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+							<dd><pre><code class="language-tsx"><span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">Loading</span><span style="color: #000000">() {</span>
 <span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #800000">&lt;p&gt;</span><span style="color: #000000">Loading...</span><span style="color: #800000">&lt;/p&gt;</span>
 <span style="color: #000000">}</span>
 </code></pre>
@@ -142,10 +151,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="accessroute" class="tsd-anchor"></a>
 					<h3>access<wbr>Route</h3>
-					<div class="tsd-signature tsd-kind-icon">access<wbr>Route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">access<wbr>Route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Union</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PrivateRoutesList</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L109">next-shield/NextShield.tsx:109</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L114">next-shield/NextShield.tsx:114</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -175,7 +184,7 @@
 					<div class="tsd-signature tsd-kind-icon">hybrid<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L136">next-shield/NextShield.tsx:136</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L141">next-shield/NextShield.tsx:141</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -197,7 +206,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Auth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L28">next-shield/NextShield.tsx:28</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L33">next-shield/NextShield.tsx:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -233,7 +242,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Loading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L54">next-shield/NextShield.tsx:54</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L59">next-shield/NextShield.tsx:59</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -269,10 +278,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="loginroute" class="tsd-anchor"></a>
 					<h3>login<wbr>Route</h3>
-					<div class="tsd-signature tsd-kind-icon">login<wbr>Route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">login<wbr>Route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Union</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PublicRoutesList</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L91">next-shield/NextShield.tsx:91</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L96">next-shield/NextShield.tsx:96</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -299,10 +308,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="privateroutes" class="tsd-anchor"></a>
 					<h3>private<wbr>Routes</h3>
-					<div class="tsd-signature tsd-kind-icon">private<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">private<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PrivateRoutesList</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L118">next-shield/NextShield.tsx:118</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L123">next-shield/NextShield.tsx:123</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -320,10 +329,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="publicroutes" class="tsd-anchor"></a>
 					<h3>public<wbr>Routes</h3>
-					<div class="tsd-signature tsd-kind-icon">public<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">public<wbr>Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PublicRoutesList</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L127">next-shield/NextShield.tsx:127</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L132">next-shield/NextShield.tsx:132</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -344,7 +353,7 @@
 					<div class="tsd-signature tsd-kind-icon">router<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NextRouter</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/7a3deb3/src/next-shield/NextShield.tsx#L73">next-shield/NextShield.tsx:73</a></li>
+							<li>Defined in <a href="https://github.com/imjulianeral/next-shield/blob/1671bb8/src/next-shield/NextShield.tsx#L78">next-shield/NextShield.tsx:78</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -389,7 +398,7 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="next_shield_nextshield.nextshieldprops.html" class="tsd-kind-icon">Next<wbr>Shield<wbr>Props</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -423,7 +432,7 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../modules/next_shield_nextshield.html#nextshield" class="tsd-kind-icon">Next<wbr>Shield</a>
 					</li>
 				</ul>
@@ -436,11 +445,11 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 			</ul>
 		</div>
 	</div>
