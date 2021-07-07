@@ -166,6 +166,10 @@ export interface NextShieldProps<
    * ```
    */
   LoadingComponent: ReactNode
+  RBAC?: {
+    [index: string]: PrivateRoutesList[number][]
+  }
+  userRole?: string
 }
 
 /**
@@ -219,15 +223,21 @@ export function NextShield<
   publicRoutes,
   hybridRoutes,
   LoadingComponent,
+  RBAC,
+  userRole,
   children,
 }: NextShieldProps<PrivateRoutesList, PublicRoutesList> & { children: ReactNode }) {
   const pathIsPrivate = privateRoutes.indexOf(router.pathname) !== -1
   const pathIsPublic = publicRoutes.indexOf(router.pathname) !== -1
   const pathIsHybrid = hybridRoutes?.indexOf(router.pathname) !== -1
+  const pathIsAuthorized =
+    RBAC && userRole && RBAC[userRole].indexOf(router.pathname) !== -1
 
   useEffect(() => {
     if (!isAuth && !isLoading && pathIsPrivate) router.replace(loginRoute)
     if (isAuth && !isLoading && pathIsPublic) router.replace(accessRoute)
+    if (isAuth && !isLoading && !pathIsHybrid && !pathIsAuthorized)
+      router.replace(accessRoute)
   }, [router, isAuth, isLoading, pathIsPrivate, pathIsPublic])
 
   if (
