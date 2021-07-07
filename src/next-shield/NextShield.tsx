@@ -230,15 +230,20 @@ export function NextShield<
   const pathIsPrivate = privateRoutes.indexOf(router.pathname) !== -1
   const pathIsPublic = publicRoutes.indexOf(router.pathname) !== -1
   const pathIsHybrid = hybridRoutes?.indexOf(router.pathname) !== -1
-  const pathIsAuthorized =
-    RBAC && userRole && RBAC[userRole].indexOf(router.pathname) !== -1
+  const pathIsAuthorized = () => {
+    if (RBAC && userRole) {
+      return RBAC[userRole].indexOf(router.pathname) !== -1
+    }
+
+    return false
+  }
 
   useEffect(() => {
     if (!isAuth && !isLoading && pathIsPrivate) router.replace(loginRoute)
     if (isAuth && !isLoading && pathIsPublic) router.replace(accessRoute)
-    if (isAuth && !isLoading && !pathIsHybrid && !pathIsAuthorized)
+    if (userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized())
       router.replace(accessRoute)
-  }, [router, isAuth, isLoading, pathIsPrivate, pathIsPublic, pathIsAuthorized])
+  }, [router, userRole, isAuth, isLoading, pathIsPrivate, pathIsPublic, pathIsAuthorized])
 
   if (
     ((isLoading || !isAuth) && pathIsPrivate) ||
