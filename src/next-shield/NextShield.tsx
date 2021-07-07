@@ -238,7 +238,7 @@ export function NextShield<
     if (isAuth && !isLoading && pathIsPublic) router.replace(accessRoute)
     if (isAuth && !isLoading && !pathIsHybrid && !pathIsAuthorized)
       router.replace(accessRoute)
-  }, [router, isAuth, isLoading, pathIsPrivate, pathIsPublic])
+  }, [router, isAuth, isLoading, pathIsPrivate, pathIsPublic, pathIsAuthorized])
 
   if (
     ((isLoading || !isAuth) && pathIsPrivate) ||
