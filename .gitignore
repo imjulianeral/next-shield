@@ -79,6 +79,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# Build output
+build
+
 # Next.js build output
 .next
 out
@@ -117,3 +120,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# End of https://www.toptal.com/developers/gitignore/api/node
