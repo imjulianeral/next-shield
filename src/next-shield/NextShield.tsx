@@ -1,8 +1,6 @@
 import type { NextRouter } from 'next/router'
-import type { ElementType, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { useEffect } from 'react'
-
-type Union<T extends any[]> = T extends (infer U)[] ? U : never
 
 export interface NextShieldProps<
   PrivateRoutesList extends string[],
@@ -93,7 +91,7 @@ export interface NextShieldProps<
    * )
    * ```
    */
-  loginRoute: Union<PublicRoutesList>
+  loginRoute: PublicRoutesList[number]
   /**
    * 🚧 Private route where your user is going to access after login.
    *
@@ -111,7 +109,7 @@ export interface NextShieldProps<
    * )
    * ```
    */
-  accessRoute: Union<PrivateRoutesList>
+  accessRoute: PrivateRoutesList[number]
   /**
    * 🚧 🚧 🚧 Array of private routes. These are only accessible when the user is authenticated.
    *
@@ -167,27 +165,27 @@ export interface NextShieldProps<
    * }
    * ```
    */
-  LoadingComponent: ElementType<unknown>
+  LoadingComponent: ReactNode
 }
 
 /**
  * 😉 Component designed to protect the routes of your app. You must use this component as a wrapper in your `_app.tsx` file.
- * 
+ *
  * @typeParam NextShieldProps - {@link NextShieldProps | see definition here}
  * @returns NextShield Component
- * 
+ *
  * @example
  * ```tsx
  * import { Loading } from '@components/routes/loading'
- * 
+ *
  * const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
  *  const { isAuth, isLoading } = useAuth()
  *  const router = useRouter()
-
+ *
  *  const privateRoutes = ['/protected']
  *  const publicRoutes = ['/']
  *  const hybridRoutes = ['/products/[slug]']
-
+ *
  *  return (
  *    <NextShield
  *      isAuth={isAuth}
@@ -202,7 +200,7 @@ export interface NextShieldProps<
  *    </NextShield>
  *   )
  * }
-
+ *
  * export default MyApp
  * ```
  * @packageDocumentation
