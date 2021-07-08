@@ -227,27 +227,23 @@ export function NextShield<
   userRole,
   children,
 }: NextShieldProps<PrivateRoutesList, PublicRoutesList> & { children: ReactNode }) {
-  const pathIsPrivate = privateRoutes.indexOf(router.pathname) !== -1
-  const pathIsPublic = publicRoutes.indexOf(router.pathname) !== -1
-  const pathIsHybrid = hybridRoutes?.indexOf(router.pathname) !== -1
-  const pathIsAuthorized = () => {
-    if (RBAC && userRole) {
-      return RBAC[userRole].indexOf(router.pathname) !== -1
-    }
-
-    return false
-  }
+  const pathIsPrivate = privateRoutes.some(route => route === router.pathname)
+  const pathIsPublic = publicRoutes.some(route => route === router.pathname)
+  const pathIsHybrid = hybridRoutes?.some(route => route === router.pathname)
+  const pathIsAuthorized =
+    RBAC && userRole ? RBAC[userRole].some(route => route === router.pathname) : false
 
   useEffect(() => {
     if (!isAuth && !isLoading && pathIsPrivate) router.replace(loginRoute)
     if (isAuth && !isLoading && pathIsPublic) router.replace(accessRoute)
-    if (userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized())
+    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
       router.replace(accessRoute)
   }, [router, userRole, isAuth, isLoading, pathIsPrivate, pathIsPublic, pathIsAuthorized])
 
   if (
     ((isLoading || !isAuth) && pathIsPrivate) ||
     ((isLoading || isAuth) && pathIsPublic) ||
+    ((isLoading || userRole) && !pathIsAuthorized) ||
     (isLoading && pathIsHybrid)
   )
     return <>{LoadingComponent}</>
