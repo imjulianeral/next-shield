@@ -2,6 +2,8 @@ import type { NextRouter } from 'next/router'
 import type { ReactNode } from 'react'
 import { useEffect } from 'react'
 
+import { verifyPath } from './routes/path'
+
 export interface NextShieldProps<
   PrivateRoutesList extends string[],
   PublicRoutesList extends string[]
@@ -216,7 +218,7 @@ export function NextShield<
 >({
   isAuth,
   isLoading,
-  router,
+  router: { pathname, replace },
   loginRoute,
   accessRoute,
   privateRoutes,
@@ -227,18 +229,17 @@ export function NextShield<
   userRole,
   children,
 }: NextShieldProps<PrivateRoutesList, PublicRoutesList> & { children: ReactNode }) {
-  const pathIsPrivate = privateRoutes.some(route => route === router.pathname)
-  const pathIsPublic = publicRoutes.some(route => route === router.pathname)
-  const pathIsHybrid = hybridRoutes?.some(route => route === router.pathname)
-  const pathIsAuthorized =
-    RBAC && userRole ? RBAC[userRole].some(route => route === router.pathname) : false
+  const pathIsPrivate = verifyPath(privateRoutes, pathname)
+  const pathIsPublic = verifyPath(publicRoutes, pathname)
+  const pathIsHybrid = verifyPath(hybridRoutes, pathname)
+  const pathIsAuthorized = RBAC && userRole && verifyPath(RBAC[userRole], pathname)
 
   useEffect(() => {
-    if (!isAuth && !isLoading && pathIsPrivate) router.replace(loginRoute)
-    if (isAuth && !isLoading && pathIsPublic) router.replace(accessRoute)
+    if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
+    if (isAuth && !isLoading && pathIsPublic) replace(accessRoute)
     if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
-      router.replace(accessRoute)
-  }, [router, userRole, isAuth, isLoading, pathIsPrivate, pathIsPublic, pathIsAuthorized])
+      replace(accessRoute)
+  }, [userRole, isAuth, isLoading, pathIsPrivate, pathIsPublic, pathIsAuthorized])
 
   if (
     ((isLoading || !isAuth) && pathIsPrivate) ||
