@@ -1,15 +1,3 @@
 {
-  "plugins": ["@typescript-eslint/eslint-plugin", "eslint-plugin-tsdoc"],
-  "extends": ["plugin:@typescript-eslint/recommended"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "./",
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "rules": {
-    "tsdoc/syntax": "warn",
-    "@typescript-eslint/explicit-module-boundary-types": "disable"
-  }
+  "extends": "next"
 }

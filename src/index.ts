@@ -1,1 +1,2 @@
-export * from './next-shield/NextShield'
+export { NextShield } from './components/NextShield'
+export { NextShieldProps } from './types/props'

@@ -1,0 +1,93 @@
+import React, { ReactNode, useEffect } from 'react'
+
+import { NextShieldProps } from '../types/props'
+import { verifyPath } from '../libs/routes'
+
+/**
+ * 😉 Component designed to protect the routes of your app. You must use this component as a wrapper in your `_app.tsx` file.
+ *
+ * @typeParam NextShieldProps - {@link NextShieldProps | see definition here}
+ * @returns NextShield Component
+ *
+ * @example
+ * ```tsx
+ * import { Loading } from '@components/routes/loading'
+ *
+ * const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+ *  const { isAuth, isLoading } = useAuth()
+ *  const router = useRouter()
+ *
+ *  const privateRoutes = ['/protected']
+ *  const publicRoutes = ['/']
+ *  const hybridRoutes = ['/products/[slug]']
+ *
+ *  return (
+ *    <NextShield
+ *      isAuth={isAuth}
+ *      isLoading={isLoading}
+ *      router={router}
+ *      privateRoutes={privateRoutes}
+ *      publicRoutes={publicRoutes}
+ *      hybridRoutes={hybridRoutes}
+ *      LoadingComponent={Loading}
+ *    >
+ *      <Component {...pageProps} />
+ *    </NextShield>
+ *   )
+ * }
+ *
+ * export default MyApp
+ * ```
+ * @packageDocumentation
+ */
+
+export function NextShield<
+  PrivateRoutesList extends string[],
+  PublicRoutesList extends string[]
+>({
+  isAuth,
+  isLoading,
+  router: { pathname, replace },
+  loginRoute,
+  accessRoute,
+  privateRoutes,
+  publicRoutes,
+  hybridRoutes,
+  LoadingComponent,
+  RBAC,
+  userRole,
+  children,
+}: NextShieldProps<PrivateRoutesList, PublicRoutesList> & { children: ReactNode }) {
+  const pathIsPrivate = verifyPath(privateRoutes, pathname)
+  const pathIsPublic = verifyPath(publicRoutes, pathname)
+  const pathIsHybrid = verifyPath(hybridRoutes, pathname)
+  const pathIsAuthorized = RBAC && userRole && verifyPath(RBAC[userRole], pathname)
+
+  useEffect(() => {
+    if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
+    if (isAuth && !isLoading && pathIsPublic) replace(accessRoute)
+    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
+      replace(accessRoute)
+  }, [
+    replace,
+    userRole,
+    isAuth,
+    isLoading,
+    accessRoute,
+    loginRoute,
+    pathIsPrivate,
+    pathIsPublic,
+    pathIsHybrid,
+    pathIsAuthorized,
+  ])
+
+  if (
+    ((isLoading || !isAuth) && pathIsPrivate) ||
+    ((isLoading || isAuth) && pathIsPublic) ||
+    ((isLoading || userRole) && !pathIsAuthorized) ||
+    (isLoading && pathIsHybrid)
+  )
+    return <>{LoadingComponent}</>
+
+  return <>{children}</>
+}
