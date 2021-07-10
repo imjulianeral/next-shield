@@ -4,7 +4,7 @@ import { NextShieldProps } from '../types/props'
 import { verifyPath } from '../libs/routes'
 
 /**
- * 😉 Component designed to protect the routes of your app. You must use this component as a wrapper in your `_app.tsx` file.
+ * 😉 The router that every Next.js project needs
  *
  * @typeParam NextShieldProps - {@link NextShieldProps | see definition here}
  * @returns NextShield Component
