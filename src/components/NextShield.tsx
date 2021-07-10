@@ -6,7 +6,7 @@ import { verifyPath } from '../libs/routes'
 /**
  * 😉 The router that every Next.js project needs
  *
- * @typeParam NextShieldProps - {@link NextShieldProps | see definition here}
+ * @typeParam NextShieldProps - {@link NextShieldProps | see here}
  * @returns NextShield Component
  *
  * @example
