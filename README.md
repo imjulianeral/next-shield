@@ -1,6 +1,6 @@
 # NextShield
 
-😉 Component designed to protect the routes of your app. You must use this component as a wrapper in your `_app.tsx` file.
+😉 The shield that every Next.js project needs.
 
 ```tsx
 import { Loading } from '@components/routes/loading'
@@ -21,7 +21,7 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
       privateRoutes={privateRoutes}
       publicRoutes={publicRoutes}
       hybridRoutes={hybridRoutes}
-      LoadingComponent={Loading}
+      LoadingComponent={<Loading />}
     >
       <Component {...pageProps} />
     </NextShield>
@@ -117,7 +117,7 @@ return (
 
 ### accessRoute
 
-🚧 Private route where your user is going to access after login.
+🚧 Route where your user is going to access after login, must be a private route.
 
 ```tsx
 ...
@@ -160,7 +160,7 @@ const hybridRoutes = ['/support', '/pricing', '/products/[slug]']
 
 ### LoadingComponent
 
-Functional Component which is going to appear when `isLoading` equals to `true`
+🌀 React Component which is going to appear when `isLoading` equals to `true`.
 
 `Loading.tsx`:
 
@@ -181,11 +181,57 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <NextShield
       ...
-      LoadingComponent={Loading}
+      LoadingComponent={<Loading />}
       ...
     >
       <Component {...pageProps} />
     </NextShield>
   )
 }
+```
+
+### RBAC
+
+🔏 🔐 🔒 Role Based Access Control.
+
+You can define an object literal to specify which roles are supported and which routes the role have access.
+
+You must define the accessRoute on each Role.
+
+```tsx
+return (
+  <NextShield
+    ...
+    accessRoute="/profile"
+    RBAC={{
+      ADMIN: ['/profile', '/control-panel'],
+      EMPLOYEE: ['/profile', '/dashboard'],
+    }}
+    ...
+  >
+    <Component {...pageProps} />
+  </NextShield>
+)
+```
+
+### userRole
+
+🎭 The auth user role.
+
+- This value must be provided when using RBAC.
+- Should by provided by the session or state of the application.
+- Must match with the roles defined on RBAC
+
+```tsx
+const { user } = useAuth()
+
+return (
+  <NextShield
+    ...
+    userRole={user.role} // "ADMIN"
+    ...
+  >
+    <Component {...pageProps} />
+  </NextShield>
+)
 ```

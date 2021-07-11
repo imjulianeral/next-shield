@@ -30,6 +30,7 @@
     }
   },
   "name": "next-shield",
+  "description": "The shield that every Next.js project needs.",
   "author": "Jorge Acero",
   "module": "dist/next-shield.esm.js",
   "size-limit": [

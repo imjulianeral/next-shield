@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import type { NextRouter } from 'next/router'
 
-
 export interface NextShieldProps<
   PrivateRoutesList extends string[],
   PublicRoutesList extends string[]
@@ -93,7 +92,7 @@ export interface NextShieldProps<
    */
   loginRoute: PublicRoutesList[number]
   /**
-   * 🚧 Private route where your user is going to access after login.
+   * 🚧 Route where your user is going to access after login, must be a private route.
    *
    * @example
    * ```tsx
@@ -138,7 +137,7 @@ export interface NextShieldProps<
    */
   hybridRoutes?: string[]
   /**
-   * Functional Component which is going to appear when `isLoading` equals to `true`
+   * 🌀 React Component which is going to appear when `isLoading` equals to `true`.
    *
    * @example
    * ```tsx
@@ -156,7 +155,7 @@ export interface NextShieldProps<
    *   return (
    *     <NextShield
    *       ...
-   *       LoadingComponent={Loading}
+   *       LoadingComponent={<Loading />}
    *       ...
    *     >
    *       <Component {...pageProps} />
@@ -166,8 +165,57 @@ export interface NextShieldProps<
    * ```
    */
   LoadingComponent: ReactNode
+
+  /**
+   * 🔏 🔐 🔒 Role Based Access Control.
+   * 
+   * @remarks
+   * You can define an object literal to specify which roles are supported and which routes the role have access.
+   * 
+   * You must define the accessRoute on each Role
+   * 
+   * @example
+   * ```tsx
+   *   return (
+   *     <NextShield
+   *       ...
+   *       accessRoute="/profile"
+   *       RBAC={{
+   *          ADMIN: ['/profile', '/control-panel'],
+   *          EMPLOYEE: ['/profile', '/dashboard'], 
+   *       }}
+   *       ...
+   *     >
+   *       <Component {...pageProps} />
+   *     </NextShield>
+   *   )
+   * ```
+   */
   RBAC?: {
     [index: string]: PrivateRoutesList[number][]
   }
+  /**
+   * 🎭 The auth user role.
+   * 
+   * @remarks
+   * - This value must be provided when using RBAC.
+   * - Should by provided by the session or state of the application.
+   * - Must match with the roles defined on RBAC
+   * 
+   * @example
+   * ```tsx
+   *   const { user } = useAuth()
+   * 
+   *   return (
+   *     <NextShield
+   *       ...
+   *       userRole={user.role} // "ADMIN"
+   *       ...
+   *     >
+   *       <Component {...pageProps} />
+   *     </NextShield>
+   *   )
+   * ```
+   */
   userRole?: string
 }

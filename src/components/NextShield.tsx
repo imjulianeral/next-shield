@@ -4,7 +4,7 @@ import { NextShieldProps } from '../types/props'
 import { verifyPath } from '../libs/routes'
 
 /**
- * 😉 The router that every Next.js project needs
+ * 😉 The shield that every Next.js project needs
  *
  * @typeParam NextShieldProps - {@link NextShieldProps | see here}
  * @returns NextShield Component
@@ -29,7 +29,7 @@ import { verifyPath } from '../libs/routes'
  *      privateRoutes={privateRoutes}
  *      publicRoutes={publicRoutes}
  *      hybridRoutes={hybridRoutes}
- *      LoadingComponent={Loading}
+ *      LoadingComponent={<Loading />}
  *    >
  *      <Component {...pageProps} />
  *    </NextShield>
