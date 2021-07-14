@@ -165,9 +165,7 @@ const hybridRoutes = ['/support', '/pricing', '/products/[slug]']
 `Loading.tsx`:
 
 ```tsx
-import { FC } from 'react'
-
-export const Loading: FC = () => {
+export function Loading() {
   return <p>Loading...</p>
 }
 ```
