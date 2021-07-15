@@ -1,0 +1,1 @@
+(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[737],{4026:function(e){"use strict";e.exports=JSON.parse('{"allTagsPath":"/next-shield/blog/tags","slug":"facebook","name":"facebook","count":1,"permalink":"/next-shield/blog/tags/facebook"}')}}]);
