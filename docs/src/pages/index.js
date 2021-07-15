@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import Layout from '@theme/Layout'
+import CodeBlock from '@theme/CodeBlock'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import styles from './index.module.css'
@@ -15,6 +16,7 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
+          <CodeBlock className="language-bash">npm i next-shield</CodeBlock>
           <Link className="button button--primary button--lg" to="/docs/intro">
             NextShield Tutorial - 5min ⏱️
           </Link>

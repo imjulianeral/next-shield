@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/nightOwl')
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'NextShield',
-  tagline: 'The shield that every Next.js project needs.',
+  tagline: 'The shield that every Next.js app needs.',
   url: 'https://imjulianeral.github.io',
   baseUrl: '/next-shield/',
   onBrokenLinks: 'throw',
@@ -70,13 +70,17 @@ module.exports = {
               to: '/blog',
             },
             {
+              label: 'npm',
+              href: 'https://www.npmjs.com/package/next-shield',
+            },
+            {
               label: 'Illustrations',
-              to: 'https://storyset.com/technology',
+              href: 'https://storyset.com/technology',
             },
           ],
         },
       ],
-      copyright: `${new Date().getFullYear()} NextShield. Built with 🤍 by @imjulianeral.`,
+      copyright: `${new Date().getFullYear()} NextShield. Built with 💙 by @imjulianeral.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -90,12 +94,12 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
+          // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
