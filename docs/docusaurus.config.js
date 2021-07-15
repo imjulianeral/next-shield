@@ -1,10 +1,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const darkCodeTheme = require('prism-react-renderer/themes/nightOwl')
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'NextShield',
-  tagline: 'The 🛡 that every Next.js project needs',
+  tagline: 'The shield that every Next.js project needs.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -38,7 +38,7 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: 'Docs',
@@ -69,10 +69,14 @@ module.exports = {
               label: 'Blog',
               to: '/blog',
             },
+            {
+              label: 'Illustrations',
+              to: 'https://storyset.com/technology',
+            },
           ],
         },
       ],
-      copyright: `${new Date().getFullYear()} NextShield. Built with 💙 by @imjulianeral.`,
+      copyright: `${new Date().getFullYear()} NextShield. Built with 🤍 by @imjulianeral.`,
     },
     prism: {
       theme: lightCodeTheme,

@@ -1,41 +1,63 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import React from 'react'
+import clsx from 'clsx'
+import styles from './HomepageFeatures.module.css'
 
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('../../static/img/easy.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Configure everything in one place, just pass the values from your state and
+        everything will be reactive.
       </>
     ),
   },
   {
     title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('../../static/img/focus.svg').default,
+    description: <>Just define what you need and let NextShield handle it for you.</>,
+  },
+  {
+    title: 'No Flashy Content',
+    Svg: require('../../static/img/flash.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Protect your sensitive data. If not authorized, it won&apos;t be displayed; as
+        simple as that.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Role-Based Access Control',
+    Svg: require('../../static/img/RBAC.svg').default,
+    description: (
+      <>Define the roles and the permissions for each of them in one single step.</>
+    ),
+  },
+  {
+    title: 'Completely Agnostic',
+    Svg: require('../../static/img/routes.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        It doesn&apos;t matter which auth provider your app use; only provide the required
+        values to NextShield.
       </>
     ),
   },
-];
+  {
+    title: "Don't Write Repetitive Code Anymore",
+    Svg: require('../../static/img/code.svg').default,
+    description: (
+      <>
+        Forget about writing `router.push` and custom validations on each page or
+        component.
+      </>
+    ),
+  },
+]
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
@@ -46,7 +68,7 @@ function Feature({Svg, title, description}) {
         <p>{description}</p>
       </div>
     </div>
-  );
+  )
 }
 
 export default function HomepageFeatures() {
@@ -60,5 +82,5 @@ export default function HomepageFeatures() {
         </div>
       </div>
     </section>
-  );
+  )
 }
