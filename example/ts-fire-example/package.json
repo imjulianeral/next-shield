@@ -1,0 +1,26 @@
+{
+  "name": "ts-fire-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "firebase": "^8.7.0",
+    "next": "11.0.1",
+    "next-shield": "^1.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-firebase-hooks": "^3.0.4",
+    "reseter.css": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.14",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "typescript": "^4.3.5"
+  }
+}

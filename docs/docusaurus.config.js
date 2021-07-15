@@ -5,12 +5,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/nightOwl')
 module.exports = {
   title: 'NextShield',
   tagline: 'The shield that every Next.js project needs.',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://imjulianeral.github.io',
+  baseUrl: '/next-shield/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: '@imjulianeral', // Usually your GitHub org/user name.
+  organizationName: 'imjulianeral', // Usually your GitHub org/user name.
   projectName: 'next-shield', // Usually your repo name.
   themeConfig: {
     navbar: {
