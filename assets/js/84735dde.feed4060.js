@@ -1,0 +1,1 @@
+(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[906],{942:function(n){"use strict";n.exports=JSON.parse('{"allTagsPath":"/next-shield/blog/tags","slug":"ignition","name":"ignition","count":1,"permalink":"/next-shield/blog/tags/ignition"}')}}]);

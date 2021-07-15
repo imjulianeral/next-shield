@@ -1,1 +1,0 @@
-(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[790],{4163:function(s){"use strict";s.exports=JSON.parse('{"allTagsPath":"/next-shield/blog/tags","slug":"docusaurus","name":"docusaurus","count":2,"permalink":"/next-shield/blog/tags/docusaurus"}')}}]);
