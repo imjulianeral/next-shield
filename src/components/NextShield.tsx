@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 
 import { NextShieldProps } from '../types/props'
-import { verifyPath } from '../libs/routes'
+import { verifyPath, getAccessRoute } from '../libs/routes'
 
 /**
  * 😉 The shield that every Next.js project needs
@@ -47,9 +47,9 @@ export function NextShield<
 >({
   isAuth,
   isLoading,
-  router: { pathname /*replace*/ },
-  // loginRoute,
-  // accessRoute,
+  router: { pathname, replace },
+  loginRoute,
+  accessRoute,
   privateRoutes,
   publicRoutes,
   hybridRoutes,
@@ -63,25 +63,25 @@ export function NextShield<
   const pathIsHybrid = verifyPath(hybridRoutes, pathname)
   const pathIsAuthorized =
     RBAC && userRole && verifyPath(RBAC[userRole].grantedRoutes, pathname)
-  // const access = getAccessRoute(RBAC, userRole, accessRoute)
+  const access = getAccessRoute(RBAC, userRole, accessRoute)
 
-  // useEffect(() => {
-  //   if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
-  //   if (isAuth && !isLoading && pathIsPublic) replace(access)
-  //   if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
-  //     replace(access)
-  // }, [
-  //   replace,
-  //   userRole,
-  //   access,
-  //   isAuth,
-  //   isLoading,
-  //   loginRoute,
-  //   pathIsPrivate,
-  //   pathIsPublic,
-  //   pathIsHybrid,
-  //   pathIsAuthorized,
-  // ])
+  useEffect(() => {
+    if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
+    if (isAuth && !isLoading && pathIsPublic) replace(access)
+    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
+      replace(access)
+  }, [
+    replace,
+    userRole,
+    access,
+    isAuth,
+    isLoading,
+    loginRoute,
+    pathIsPrivate,
+    pathIsPublic,
+    pathIsHybrid,
+    pathIsAuthorized,
+  ])
 
   if (
     ((isLoading || !isAuth) && pathIsPrivate) ||
