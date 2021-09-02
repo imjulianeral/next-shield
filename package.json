@@ -67,7 +67,7 @@
   "bugs": {
     "url": "https://github.com/imjulianeral/next-shield/issues"
   },
-  "homepage": "https://github.com/imjulianeral/next-shield#readme",
+  "homepage": "https://imjulianeral.github.io/next-shield/",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
