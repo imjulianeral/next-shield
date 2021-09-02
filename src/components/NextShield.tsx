@@ -63,7 +63,7 @@ export function NextShield<
   const pathIsHybrid = verifyPath(hybridRoutes, pathname)
   const pathIsAuthorized =
     RBAC && userRole && verifyPath(RBAC[userRole].grantedRoutes, pathname)
-  const access = getAccessRoute(RBAC, userRole, accessRoute, loginRoute)
+  const access = getAccessRoute(RBAC, userRole, accessRoute)
 
   console.log({
     userRole,
@@ -101,7 +101,6 @@ export function NextShield<
     ((isLoading || userRole) && !pathIsAuthorized) ||
     (isLoading && pathIsHybrid)
   ) {
-    console.log('hey')
     return <>{LoadingComponent}</>
   }
 
