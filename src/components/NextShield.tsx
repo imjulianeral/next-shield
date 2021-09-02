@@ -63,19 +63,23 @@ export function NextShield<
   const pathIsHybrid = verifyPath(hybridRoutes, pathname)
   const pathIsAuthorized =
     RBAC && userRole && verifyPath(RBAC[userRole].grantedRoutes, pathname)
-  const route = getAccessRoute(RBAC, userRole, accessRoute, loginRoute)
+  const access = getAccessRoute(RBAC, userRole, accessRoute, loginRoute)
 
   useEffect(() => {
     if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
-    if (isAuth && !isLoading && pathIsPublic)
-      replace(route)
-
-    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
-      replace(route)
+    if (isAuth && !isLoading && pathIsPublic) replace(access)
+    if (
+      isAuth &&
+      typeof userRole === 'string' &&
+      !isLoading &&
+      !pathIsHybrid &&
+      !pathIsAuthorized
+    )
+      replace(access)
   }, [
     replace,
     userRole,
-    route,
+    access,
     isAuth,
     isLoading,
     loginRoute,
