@@ -32,13 +32,18 @@ export function Shield({ children }: Props) {
     LoadingComponent: <Loading />,
     privateRoutes: ['/profile', '/dashboard', '/control-panel'],
     publicRoutes: ['/', '/login'],
-    accessRoute: '/profile',
     loginRoute: '/login',
     RBAC: {
-      ADMIN: ['/profile', '/control-panel'],
-      USER: ['/profile', '/dashboard'],
+      ADMIN: {
+        grantedRoutes: ['/profile', '/control-panel'],
+        accessRoute: '/profile',
+      },
+      USER: {
+        grantedRoutes: ['/profile', '/dashboard'],
+        accessRoute: '/dashboard',
+      },
     },
-    userRole: value?.role,
+    userRole: value?.role as string,
   }
 
   if (error) return <p>{error}</p>
