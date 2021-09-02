@@ -67,10 +67,17 @@ export function NextShield<
 
   useEffect(() => {
     if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
-    if (isAuth && !isLoading && pathIsPublic) replace(access)
-    if (isAuth && !isLoading && !pathIsHybrid && !pathIsAuthorized) replace(access)
+    if (isAuth && !isLoading && pathIsPublic) {
+      console.log('redirected to private route', { access, pathIsAuthorized })
+      replace(access)
+    }
+    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized) {
+      console.log('redirected to granted route', { access, pathIsAuthorized })
+      replace(access)
+    }
   }, [
     replace,
+    userRole,
     access,
     isAuth,
     isLoading,
