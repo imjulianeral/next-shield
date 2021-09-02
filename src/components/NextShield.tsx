@@ -74,7 +74,7 @@ export function NextShield<
   }, [
     replace,
     userRole,
-    RBAC,
+    // RBAC,
     isAuth,
     isLoading,
     accessRoute,
