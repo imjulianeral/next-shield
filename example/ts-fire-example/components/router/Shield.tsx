@@ -43,7 +43,7 @@ export function Shield({ children }: Props) {
         accessRoute: '/dashboard',
       },
     },
-    userRole: value?.role ?? 'USER',
+    userRole: value?.role as string,
   }
 
   if (error) return <p>{error}</p>
