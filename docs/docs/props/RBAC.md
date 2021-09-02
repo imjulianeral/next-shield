@@ -14,10 +14,15 @@ You can define an object literal to specify which roles are supported and which 
 return (
   <NextShield
     ...
-    accessRoute="/profile"
     RBAC={{
-      ADMIN: ['/profile', '/control-panel'],
-      EMPLOYEE: ['/profile', '/dashboard'],
+      ADMIN: {
+        grantedRoutes: ['/dashboard', '/control-panel'],
+        accessRoute: '/dashboard',
+      },
+      USER: {
+        grantedRoutes: ['/profile', '/dashboard'],
+        accessRoute: '/profile',
+      },
     }}
     ...
   >

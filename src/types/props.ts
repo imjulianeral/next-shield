@@ -398,11 +398,16 @@ export type NextShieldProps<
    *   return (
    *     <NextShield
    *       ...
-   *       accessRoute="/profile"
    *       RBAC={{
-   *          ADMIN: ['/profile', '/control-panel'],
-   *          EMPLOYEE: ['/profile', '/dashboard'], 
-   *       }}
+   *        ADMIN: {
+   *          grantedRoutes: ['/dashboard', '/control-panel'],
+   *          accessRoute: '/dashboard',
+   *        },
+   *        USER: {
+   *          grantedRoutes: ['/profile', '/dashboard'],
+   *          accessRoute: '/profile',
+   *        },
+   *      }}
    *       ...
    *     >
    *       <Component {...pageProps} />

@@ -18,20 +18,28 @@ import { NextShield, NextShieldProps } from 'next-shield'
 export function Shield({ children }: Props) {
   const router = useRouter()
 
-  const shieldConfig: NextShieldProps<['/private', '/control-panel'], ['/', '/login']> = {
+  const shieldConfig: NextShieldProps<
+    ['/private', '/control-panel', '/dashboard'],
+    ['/', '/login']
+  > = {
     router,
     isAuth: true,
     isLoading: false,
     LoadingComponent: <p>Loading...</p>,
-    privateRoutes: ['/private', '/control-panel'],
+    privateRoutes: ['/private', '/control-panel', '/dashboard'],
     publicRoutes: ['/', '/login'],
-    accessRoute: '/private',
     loginRoute: '/login',
     RBAC: {
-      ADMIN: ['/private', '/control-panel'],
-      USER: ['/private', '/dashboard'],
+      ADMIN: {
+        grantedRoutes: ['/dashboard', '/control-panel'],
+        accessRoute: '/dashboard',
+      },
+      EMPLOYEE: {
+        grantedRoutes: ['/private', '/dashboard'],
+        accessRoute: '/private',
+      },
     },
-    userRole: 'ADMIN' | 'USER',
+    userRole: 'ADMIN' | 'EMPLOYEE',
   }
 
   return <NextShield {...shieldConfig}>{children}</NextShield>
