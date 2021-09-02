@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { NextRouter } from 'next/router'
 
-type RoleAccess<Routes extends string[]> = {
+export type RoleAccess<Routes extends string[]> = {
   [index: string]: {
     grantedRoutes: Routes,
     accessRoute: Routes[number]
