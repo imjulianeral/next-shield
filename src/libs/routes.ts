@@ -13,5 +13,5 @@ export function getAccessRoute(
 
   if (RBAC && userRole) return RBAC[userRole].accessRoute
 
-  return undefined
+  return '/'
 }

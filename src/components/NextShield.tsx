@@ -65,35 +65,23 @@ export function NextShield<
     RBAC && userRole && verifyPath(RBAC[userRole].grantedRoutes, pathname)
   const access = getAccessRoute(RBAC, userRole, accessRoute) as string
 
-  console.log({
-    userRole,
-    access,
-    isAuth,
-    isLoading,
-    loginRoute,
-    pathIsPrivate,
-    pathIsPublic,
-    pathIsHybrid,
-    pathIsAuthorized,
-  })
-
-  useEffect(() => {
-    if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
-    if (isAuth && !isLoading && pathIsPublic) replace(access)
-    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
-      replace(access)
-  }, [
-    replace,
-    userRole,
-    access,
-    isAuth,
-    isLoading,
-    loginRoute,
-    pathIsPrivate,
-    pathIsPublic,
-    pathIsHybrid,
-    pathIsAuthorized,
-  ])
+  // useEffect(() => {
+  //   if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
+  //   if (isAuth && !isLoading && pathIsPublic) replace(access)
+  //   if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
+  //     replace(access)
+  // }, [
+  //   replace,
+  //   userRole,
+  //   access,
+  //   isAuth,
+  //   isLoading,
+  //   loginRoute,
+  //   pathIsPrivate,
+  //   pathIsPublic,
+  //   pathIsHybrid,
+  //   pathIsAuthorized,
+  // ])
 
   if (
     ((isLoading || !isAuth) && pathIsPrivate) ||
