@@ -47,9 +47,9 @@ export function NextShield<
 >({
   isAuth,
   isLoading,
-  router: { pathname, replace },
-  loginRoute,
-  accessRoute,
+  router: { pathname /*replace*/ },
+  // loginRoute,
+  // accessRoute,
   privateRoutes,
   publicRoutes,
   hybridRoutes,
