@@ -66,15 +66,12 @@ export function NextShield<
   const access = getAccessRoute(RBAC, userRole, accessRoute, loginRoute)
 
   useEffect(() => {
+    console.log({ access, pathIsAuthorized })
+
     if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
-    if (isAuth && !isLoading && pathIsPublic) {
-      console.log('redirected to private route', { access, pathIsAuthorized })
+    if (isAuth && !isLoading && pathIsPublic) replace(access)
+    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
       replace(access)
-    }
-    if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized) {
-      console.log('redirected to granted route', { access, pathIsAuthorized })
-      replace(access)
-    }
   }, [
     replace,
     userRole,
