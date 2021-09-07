@@ -86,7 +86,7 @@ export function NextShield<
   if (
     ((isLoading || !isAuth) && pathIsPrivate) ||
     ((isLoading || isAuth) && pathIsPublic) ||
-    ((isLoading || userRole) && (!pathIsAuthorized || !pathIsHybrid)) ||
+    ((isLoading || userRole) && !pathIsAuthorized) ||
     (isLoading && pathIsHybrid)
   )
     return <>{LoadingComponent}</>
