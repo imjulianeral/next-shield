@@ -88,9 +88,8 @@ export function NextShield<
     ((isLoading || isAuth) && pathIsPublic) ||
     ((isLoading || userRole) && !pathIsAuthorized) ||
     (isLoading && pathIsHybrid)
-  ) {
+  )
     return <>{LoadingComponent}</>
-  }
 
   return <>{children}</>
 }
