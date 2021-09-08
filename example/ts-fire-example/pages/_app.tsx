@@ -1,16 +1,13 @@
-import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 
-import { Shield } from '@components/router'
+import { Shield } from '@/components/routes/Shield'
 
-import 'reseter.css'
+import '@/styles/globals.css'
 
-const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Shield>
       <Component {...pageProps} />
     </Shield>
   )
 }
-
-export default MyApp

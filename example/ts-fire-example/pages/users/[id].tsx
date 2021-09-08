@@ -1,13 +1,12 @@
 import { Layout } from '@/components/routes/Layout'
 import { useAuth } from '@/hooks/auth'
 
-export default function Dashboard() {
+export default function SingleUser() {
   const { signOut } = useAuth()
 
   return (
-    <Layout title="Dashboard">
-      <h1>Dashboard</h1>
-
+    <Layout title="Single User">
+      <h1>Single User</h1>
       <button onClick={signOut}>Sign Out</button>
     </Layout>
   )
