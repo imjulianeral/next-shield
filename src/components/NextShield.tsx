@@ -4,31 +4,28 @@ import { NextShieldProps } from '../types/props'
 import { verifyPath, getAccessRoute } from '../libs/routes'
 
 /**
- * 😉 The shield that every Next.js project needs
+ * 😉 The shield that every Next.js app needs
  *
  * @typeParam NextShieldProps - {@link NextShieldProps | see here}
  * @returns NextShield Component
  *
  * @example
  * ```tsx
- * import { Loading } from '@components/routes/loading'
+ * import { Loading } from '@/components/routes/Loading'
+ * import { useAuth } from '@/hooks/auth'
  *
- * const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+ * export default function MyApp({ Component, pageProps }: AppProps) {
  *  const { isAuth, isLoading } = useAuth()
  *  const router = useRouter()
- *
- *  const privateRoutes = ['/protected']
- *  const publicRoutes = ['/']
- *  const hybridRoutes = ['/products/[slug]']
  *
  *  return (
  *    <NextShield
  *      isAuth={isAuth}
  *      isLoading={isLoading}
  *      router={router}
- *      privateRoutes={privateRoutes}
- *      publicRoutes={publicRoutes}
- *      hybridRoutes={hybridRoutes}
+ *      privateRoutes={['/protected']}
+ *      publicRoutes={['/']}
+ *      hybridRoutes={['/products/[slug]']}
  *      LoadingComponent={<Loading />}
  *    >
  *      <Component {...pageProps} />
@@ -36,7 +33,6 @@ import { verifyPath, getAccessRoute } from '../libs/routes'
  *   )
  * }
  *
- * export default MyApp
  * ```
  * @packageDocumentation
  */
