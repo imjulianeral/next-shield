@@ -13,5 +13,9 @@
         <link href="https://imjulianeral.github.io/next-shield/blog/hello-world"/>
         <updated>2021-07-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Today NextShield is released!]]></summary>
+        <author>
+            <name>@imjulianeral</name>
+            <uri>https://github.com/imjulianeral</uri>
+        </author>
     </entry>
 </feed>
