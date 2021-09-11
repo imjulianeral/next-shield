@@ -14,9 +14,9 @@ export function ComponentShield(props: ComponentShieldProps) {
   const { showForRole, showIf, fallback, RBAC, userRole, children } = props
 
   if (RBAC) return <>{showForRole === userRole ? children : null}</>
-  if (showIf) return <>{showIf ? children : fallback}</>
+  if (showIf) return <>{children}</>
 
-  return <>{children}</>
+  return <>{fallback}</>
 }
 
 // function Debug() {

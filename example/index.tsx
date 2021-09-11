@@ -1,12 +1,12 @@
 import 'react-app-polyfill/ie11'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { NextShield } from '../.'
+import { ComponentShield } from '../.'
 
 const App = () => {
   return (
     <div>
-      <NextShield<['/profile', '/dashboard', '/control-panel'], ['/', '/login']>
+      {/* <NextShield<['/profile', '/dashboard', '/control-panel'], ['/', '/login']>
         publicRoutes={['/', '/login']}
         privateRoutes={['/profile', '/dashboard', '/control-panel']}
         loginRoute="/login"
@@ -21,7 +21,11 @@ const App = () => {
           },
         }}
         userRole=""
-      />
+      /> */}
+
+      <ComponentShield>
+        <p>Hey!</p>
+      </ComponentShield>
     </div>
   )
 }
