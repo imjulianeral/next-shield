@@ -33,6 +33,15 @@
   "description": "The shield that every Next.js project needs.",
   "author": "Jorge Acero",
   "module": "dist/next-shield.esm.js",
+  "keywords": [
+    "Next.js",
+    "next",
+    "auth",
+    "routes",
+    "public routes",
+    "private routes",
+    "session"
+  ],
   "size-limit": [
     {
       "path": "dist/next-shield.cjs.production.min.js",
