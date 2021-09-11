@@ -16,18 +16,18 @@ export function ComponentShield(props: ComponentShieldProps) {
   if (RBAC) return <>{showForRole === userRole ? children : null}</>
   if (showIf) return <>{showIf ? children : fallback}</>
 
-  return <>children</>
+  return <>{children}</>
 }
 
-function Debug() {
-  return (
-    <>
-      <ComponentShield showIf={true} fallback={<p>Not Authorized</p>}>
-        <p>Default</p>
-      </ComponentShield>
-      <ComponentShield RBAC showForRole="" userRole="">
-        <p>RBAC</p>
-      </ComponentShield>
-    </>
-  )
-}
+// function Debug() {
+//   return (
+//     <>
+//       <ComponentShield showIf={true}>
+//         <p>Default</p>
+//       </ComponentShield>
+//       <ComponentShield RBAC showForRole="" userRole="">
+//         <p>RBAC</p>
+//       </ComponentShield>
+//     </>
+//   )
+// }
