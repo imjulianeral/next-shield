@@ -5,7 +5,7 @@
   NextShield
 </h1>
 
-😉 The shield that every Next.js project needs.
+😉 The shield that every Next.js app needs.
 
 ## Motivation
 
@@ -27,6 +27,6 @@ After creating a lot of apps with the same boilerplate code for authentication &
 
 You can find the documentation at the [official website](https://imjulianeral.github.io/next-shield/).
 
-## Examples
+<!-- ## Examples
 
-[Firebase Example](https://github.com/imjulianeral/next-shield/tree/main/example/ts-fire-example)
+[Firebase Example](https://github.com/imjulianeral/next-shield/tree/main/example/ts-fire-example) -->
