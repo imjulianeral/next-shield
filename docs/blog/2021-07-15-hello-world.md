@@ -20,4 +20,4 @@ Hope you can get a lot of fun with it!
 
 1. If you have 5 min please start by reading the [props](../docs/props/isAuth).
 1. Then I recommend you to start the [tutorial](../docs/intro).
-1. Finally you can see a real world example with [firebase](https://github.com/imjulianeral/next-shield/tree/main/example/ts-fire-example).
+1. Learn how to use ComponentShield to avoid using ternaries in your JSX code: [ComponentShield](../docs/protect-components/ComponentShield.md)

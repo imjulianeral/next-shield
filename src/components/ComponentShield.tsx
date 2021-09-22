@@ -8,7 +8,7 @@ import {
 } from '../types/Component'
 
 /**
- * 🛡️ A Shield for your Components, it handles when a component shows or not based on the auth state or the user's role
+ * 🛡️ A Shield for your Components, it handles when a component shows or not based on the user's role or by a custom condition that you provide.
  *
  * @param ComponentShieldProps {@link ComponentShieldProps | see here}
  * @returns Children Components | {@link JSX.Element}
