@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"RBAC & Private Routes in Next.js using next-shield","permalink":"/next-shield/blog/nextshield-private-routes-and-rbac"},{"title":"Hello World!","permalink":"/next-shield/blog/hello-world"}]}')}}]);

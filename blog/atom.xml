@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://imjulianeral.github.io/next-shield/blog</id>
     <title>NextShield Blog</title>
-    <updated>2021-07-15T00:00:00.000Z</updated>
+    <updated>2021-09-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://imjulianeral.github.io/next-shield/blog"/>
     <subtitle>NextShield Blog</subtitle>
     <icon>https://imjulianeral.github.io/next-shield/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[RBAC & Private Routes in Next.js using next-shield]]></title>
+        <id>nextshield-private-routes-and-rbac</id>
+        <link href="https://imjulianeral.github.io/next-shield/blog/nextshield-private-routes-and-rbac"/>
+        <updated>2021-09-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Protecting routes and hiding features whether the user is authenticated or authorized is a common thing to do nowadays but even so in the react world, it's quite frustrating because the rerenders that React has, which is its normal behavior, but that creates the issue of having flashy content:]]></summary>
+        <author>
+            <name>@imjulianeral</name>
+            <uri>https://github.com/imjulianeral</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello World!]]></title>
         <id>hello-world</id>
