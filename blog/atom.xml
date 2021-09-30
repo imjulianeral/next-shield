@@ -12,7 +12,7 @@
         <id>nextshield-private-routes-and-rbac</id>
         <link href="https://imjulianeral.github.io/next-shield/blog/nextshield-private-routes-and-rbac"/>
         <updated>2021-09-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Protecting routes and hiding features whether the user is authenticated or authorized is a common thing to do nowadays but even so in the react world, it's quite frustrating because the rerenders that React has, which is its normal behavior, but that creates the issue of having flashy content:]]></summary>
+        <summary type="html"><![CDATA[Protecting routes and hiding features whether the user is authenticated or authorized is a common thing to do since always but even so in the react world it's quite frustrating; the rerenders that React has, is a behavior easy to understand but hard to master, when you don't have control of it you can get a lot of issues like the flashy content:]]></summary>
         <author>
             <name>@imjulianeral</name>
             <uri>https://github.com/imjulianeral</uri>
