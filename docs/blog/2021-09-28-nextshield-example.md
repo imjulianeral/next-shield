@@ -12,23 +12,23 @@ tags: [examples]
 
 <!--truncate-->
 
-Protecting routes and hiding features whether the **user** is authenticated or authorized is a common thing to do nowadays but even so in the react world, it's quite frustrating because the rerenders that React has, which is its normal behavior, but that creates the issue of having **flashy content**:
+Protecting routes and hiding features whether the **user** is authenticated or authorized is a common thing to do since always but even so in the react world it's quite frustrating; the rerenders that React has, is a behavior easy to understand but hard to master, when you don't have control of it you can get a lot of issues like the **flashy content**:
 
 ![Peek 2021-09-23 11-13.gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1632413694415/VIwhYE1BZ.gif)
 
-This happens because in the first render React read the auth state as `null` Why? because in the first render the API request is not resolved yet, is until the second render when React has completed the request making the change to the state, triggering a rerender but now with the data **available**.
+This happens because in the first render React read the auth state as `null` Why? because in the first render the API request was not resolved yet, is until the second render when React has resolved the request making the change to the state, triggering a rerender but now with the data **available**.
 
-In summary, React is reading the state values before they are **available**, so the only thing that is getting is a [falsy value](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), that's the problem.
+In summary, React is reading the state values before they are **available**, getting a [falsy value](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), that's the problem.
 
-So, How can you solve this? There are many solutions, some people handle that on the frontend and implement a _hacky_ way using `windows.location` or on the backend with Next.js using the `getServerSideProps` method on your pages which has a `redirect` property to force a redirect to another page, and as you know is executed before rendering the page, which is perfect, right? Well... yes but no actually.
+How can you solve this? There are many solutions, some people handle that on the frontend and implement a _hacky_ way using `windows.location` or on the backend with Next.js using the `getServerSideProps` method on your pages which has a `redirect` property to force a redirect to another page, and as you know is executed before rendering the page, which is perfect, right? Well... yes but actually no.
 
 ![confused](https://cdn.hashnode.com/res/hashnode/image/upload/v1632415824864/TVwJxmb72.gif)
 
-If your backend server gets stuck the only thing your user is gonna see is a blank page, because of that you can't give any feedback to your user, not even a spinner, the best solution is still on the frontend, so may you ask "how can I implement the hacky solution using `windows.location`?" I don't recommend that also, so what solution do I recommend?
+If your backend server gets frozen the only thing your user is gonna see is a blank page, because of that you can't give any feedback to your user, not even a spinner, the best solution is still on the frontend, so may you ask "how can I implement the hacky solution using `windows.location`?" I don't recommend that also, so what solution do I recommend?
 
 ## The Solution.
 
-Frameworks like Laravel or Ruby on Rails have this solved, so why a cutting-edge framework like Next.js has not resolved this yet? Well, maybe we never know it, but I crafted my own solution called [NextShield](https://imjulianeral.github.io/next-shield/):
+Frameworks like Laravel or Ruby on Rails have this solved, so why a cutting-edge framework like Next.js has not resolved this yet? Well, maybe we never know it (or maybe there is a reason for it but I didn't realize), but I crafted my own solution called [NextShield](https://imjulianeral.github.io/next-shield/):
 
 ![logo](https://cdn.hashnode.com/res/hashnode/image/upload/v1632417104791/PczV3QiWs.png)
 
@@ -173,7 +173,7 @@ export interface Profile {
 
 ```
 
-- Create the Nav Component:
+- Create the `Nav` Component:
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1632418727457/eGrL9Aut0.png)
 
@@ -209,7 +209,7 @@ export function Nav() {
 }
 ```
 
-- Add The following components:
+- Add the following components:
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1632418141135/QnsMHR0sE.png)
 
@@ -452,15 +452,15 @@ And that's it! You will get the same behavior as before:
 
 - Unable to access ungranted routes.
 - No trace on your history.
-- 0 flashy content, the LoadingComponent will always intercept the request before showing the page or redirecting the user.
+- 0 flashy content, the `LoadingComponent` will always intercept the request before showing the page or redirecting the user.
 - Configure everything in one place.
 
 ![magikarp guy](https://cdn.hashnode.com/res/hashnode/image/upload/v1632882692044/7LUO8Gupe.gif)
 
 ## Next Steps.
 
-- [Read the docs](https://imjulianeral.github.io/next-shield/).
-- [See the complete example on the repo (main branch)](https://github.com/imjulianeral/nextshield-examples)
-- Use it with your preferred auth provider.
-- Use [ComponentShield](https://imjulianeral.github.io/next-shield/docs/protect-components/ComponentShield) to get more control of what is displayed on the screen.
-- Wait for the following Examples!
+1. [Read the docs](https://imjulianeral.github.io/next-shield/).
+1. [See the complete example on the repo (main branch)](https://github.com/imjulianeral/nextshield-examples)
+1. Use it with your preferred auth provider.
+1. Use [ComponentShield](https://imjulianeral.github.io/next-shield/docs/protect-components/ComponentShield) to get more control of what is displayed on the screen.
+1. Wait for the following Examples!
