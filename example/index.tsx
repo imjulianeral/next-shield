@@ -23,7 +23,7 @@ const App = () => {
         userRole=""
       /> */}
 
-      <ComponentShield>
+      <ComponentShield showIf={true}>
         <p>Hey!</p>
       </ComponentShield>
     </div>
