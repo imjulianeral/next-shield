@@ -60,7 +60,7 @@ export function NextShield<
   const pathIsAuthorized =
     RBAC && userRole && verifyPath(RBAC[userRole].grantedRoutes, pathname)
   const access = getAccessRoute(RBAC, userRole, accessRoute)
-
+  console.log('test from kasiduid/next-shield')
   useEffect(() => {
     if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
     if (isAuth && !isLoading && pathIsPublic) replace(access)

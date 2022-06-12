@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0-development",
+  "version": "0.0.1-development",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -29,7 +29,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "next-shield",
+  "name": "@kasiduid/next-shield",
   "description": "The shield that every Next.js project needs.",
   "author": "Jorge Acero",
   "module": "dist/next-shield.esm.js",
