@@ -27,6 +27,10 @@ After creating a lot of apps with the same boilerplate code for authentication &
 
 You can find the documentation at the [official website](https://imjulianeral.github.io/next-shield/).
 
+## Update 2025
+
+With the addition of middleware in Next.js maybe you don't need this package anymore.
+
 <!-- ## Examples
 
 [Firebase Example](https://github.com/imjulianeral/next-shield/tree/main/example/ts-fire-example) -->
