@@ -64,12 +64,12 @@ export function NextShield<
   const access = getAccessRoute(RBAC, userRole, accessRoute)
 
   useEffect(() => {
-    if (!isAuth && !isLoading && pathIsPrivate) replace(loginRoute)
-    if (isAuth && !isLoading && pathIsPublic) replace(access)
+    if (!isAuth && !isLoading && pathIsPrivate) router.replace(loginRoute)
+    if (isAuth && !isLoading && pathIsPublic) router.replace(access)
     if (isAuth && userRole && !isLoading && !pathIsHybrid && !pathIsAuthorized)
-      replace(access)
+      router.replace(access)
   }, [
-    replace,
+    router,
     userRole,
     access,
     isAuth,
