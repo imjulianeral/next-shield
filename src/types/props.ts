@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import type { NextRouter } from 'next/navigation';
 
 export type RoleAccess<Routes extends string[]> = {
   [index: string]: {
@@ -61,25 +60,6 @@ export type NextShieldProps<
    * ```
    */
   isLoading: boolean
-  /**
-   * ⇆ Instance of your router.
-   *
-   * @example
-   * ```tsx
-   * const router = useRouter()
-   * ...
-   * return (
-   *  <NextShield
-   *    ...
-   *    router={router}
-   *    ...
-   *  >
-   *    <Component {...pageProps} />
-   *  </NextShield>
-   * )
-   * ```
-   */
-  router: NextRouter
   /**
    * 📋 Login page, must be a public route.
    *
