@@ -1,35 +1,39 @@
 {
-  // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "include": ["src", "types"],
   "compilerOptions": {
+    // Use "esnext" for modern module syntax
     "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "importHelpers": true,
-    // output .d.ts declaration files for consumers
-    "declaration": true,
-    // output .js.map sourcemap files for consumers
-    "sourceMap": true,
-    // match output dir to input dir. e.g. dist/index instead of dist/src/index
-    "rootDir": "./src",
-    // stricter type-checking for stronger correctness. Recommended by TS
-    "strict": true,
-    // linter checks for common issues
-    "noImplicitReturns": true,
+    // Include DOM and ESNext features
+    "lib": ["dom", "esnext"], 
+    // Reduces the size of generated code
+    "importHelpers": true, 
+    // Generate .d.ts files for type definitions
+    "declaration": true, 
+    // Generate source maps for debugging
+    "sourceMap": true, 
+    // Specify the root directory of input files
+    "rootDir": "./src", 
+    // Enable all strict type-checking options
+    "strict": true, 
+    // Ensure all code paths return a value
+    "noImplicitReturns": true, 
+    // Prevent fallthrough cases in switch statements
     "noFallthroughCasesInSwitch": true,
-    // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    // use Node's module resolution algorithm, instead of the legacy TS one
-    "moduleResolution": "node",
-    // transpile JSX to React.createElement
-    "jsx": "react-jsx",
-    // interop between ESM and CJS modules. Recommended by TS
-    "esModuleInterop": true,
-    // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
-    "skipLibCheck": true,
-    // error out if import and file system have a casing mismatch. Recommended by TS
-    "forceConsistentCasingInFileNames": true,
-    // `tsdx build` ignores this option, but it is commonly used when type-checking separately with `tsc`
+    // Report errors on unused local variables
+    "noUnusedLocals": true, 
+    // Report errors on unused parameters
+    "noUnusedParameters": true, 
+    // Use Node's module resolution strategy
+    "moduleResolution": "node", 
+    // Use the new JSX transform introduced in React 17
+    "jsx": "react-jsx", 
+    // Enable interoperability between CommonJS and ES Modules
+    "esModuleInterop": true, 
+    // Skip type checking of declaration files
+    "skipLibCheck": true, 
+    // Ensure consistent casing in file names
+    "forceConsistentCasingInFileNames": true, 
+    // Do not emit output files; useful for type-checking only
     "noEmit": true
   }
 }
